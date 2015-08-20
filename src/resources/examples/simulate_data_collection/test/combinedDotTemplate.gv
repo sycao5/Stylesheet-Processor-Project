@@ -1,0 +1,66 @@
+/* Start of top-level graph */
+digraph Workflow {
+rankdir=TB
+
+{% LoadStyleSheet: stylesheet.yaml %}
+{% LoadData: combined.yaml %}
+
+/* Title for graph */
+fontname=Courier; fontsize=18; labelloc=t
+label=simulate_data_collection
+
+/* Start of double cluster for drawing box around nodes in workflow */
+subgraph cluster_workflow_box_outer { label=""; color=black; penwidth=2
+subgraph cluster_workflow_box_inner { label=""; color=white
+
+
+{% ApplyNodeStyle: node.AtomicProgramNodes %}
+{% Nodes: AtomicProgramNodes %}
+
+
+{% ApplyNodeStyle: node.NonParameterDataNodes %}
+{% Nodes: NonParameterDataNodes %}
+
+
+{% ApplyNodeStyle: node.ParameterDataNodes %}
+{% Nodes: ParameterDataNodes %}
+
+
+{% ApplyEdgeStyle: edge.ProgramChannelEdges %}
+{% Edges: ProgramChannelEdges %}
+}}
+
+/* Hidden double-cluster for grouping workflow input ports */
+subgraph cluster_input_ports_group_outer { label=""; color=white
+subgraph cluster_input_ports_group_inner { label=""; color=white
+
+
+{% ApplyNodeStyle: node.WorkflowInPortNodes %}
+{% Nodes: WorkflowInPortNodes %}
+
+/* End of double-cluster for grouping workflow input ports */
+}}
+
+/* Hidden double-cluster for grouping workflow output ports */
+subgraph cluster_output_ports_group_outer { label=""; color=white
+subgraph cluster_output_ports_group_inner { label=""; color=white
+
+
+{% ApplyNodeStyle: node.WorkflowOutPortNodes %}
+{% Nodes: WorkflowOutPortNodes %}
+
+
+/* End of double-cluster for grouping workflow output ports */
+}}
+
+
+/* Edges from input ports to channels */
+{% Edges: InPortChannelEdges %}
+
+
+/* Edges from channels to output ports */
+{% Edges: OutPortChannelEdges %}
+
+
+/* End of top-level graph */
+}

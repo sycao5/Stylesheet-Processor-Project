@@ -1,0 +1,8 @@
+node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "#CCFFCC", peripheries: 1, fontname: Courier}
+node.NonParameterDataNodes: {shape: box, style: "rounded,filled", fillcolor: "#FFFFCC", peripheries: 1, fontname: Helvetica}
+node.ParameterDataNodes: {shape: box, style: "rounded,filled", fillcolor: "#FCFCFC", peripheries: 1, fontname: Helvetica}
+node.WorkflowInPortNodes: {shape: circle, style: "rounded,filled", fillcolor: "#FFFFFF", peripheries: 1, fontname: Helvetica, width: 0.2}
+node.WorkflowOutPortNodes: {shape: circle, style: "rounded,filled", fillcolor: "#FFFFFF", peripheries: 1, fontname: Helvetica, width: 0.2}
+edge.ProgramChannelEdges: {}
+edge.InPortChannelEdges: {}
+edge.OutPortChannelEdges: {}

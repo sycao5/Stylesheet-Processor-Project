@@ -1,0 +1,54 @@
+AtomicProgramNodes: |
+
+   initialize_run
+   load_screening_results
+   calculate_strategy
+   log_rejected_sample
+   collect_data_set
+   transform_images
+   log_average_image_intensity
+
+ParameterDataNodes: |
+
+   cassette_id
+   sample_score_cutoff
+
+
+NonParameterDataNodes: |
+
+   corrected_image
+   run_log
+   collection_log
+   rejection_log
+   sample_spreadsheet
+   sample_name
+   sample_quality
+   rejected_sample
+   accepted_sample
+   num_images
+   energies
+   sample_id
+   energy
+   frame_number
+   raw_image
+   calibration_image
+   corrected_image_path
+   total_intensity
+   pixel_count
+
+
+ProgramChannelEdges: | 
+
+   initialize_run -> run_log
+   load_screening_results -> sample_name
+   load_screening_results -> sample_quality
+   cassette_id -> load_screening_results
+   sample_spreadsheet -> load_screening_results
+   calculate_strategy -> accepted_sample
+   calculate_strategy -> rejected_sample
+   calculate_strategy -> num_images
+   calculate_strategy -> energies
+   sample_score_cutoff -> calculate_strategy
+   sample_name -> calculate_strategy
+   sample_quality -> calculate_strategy
+   log_rejected_sample -> rejection_log

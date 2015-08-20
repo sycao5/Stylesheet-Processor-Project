@@ -1,0 +1,9 @@
+Group, Node, Neighbours
+AtomicProgramNodes, A, B, D,
+AtomicProgramNodes, B,
+AtomicProgramNodes, D, B, E,
+AtomicProgramNodes, E, B,
+SubWorkflowNodes, C, F,
+SubWorkflowNodes, F, C,
+WorkflowInPortNodes, G
+

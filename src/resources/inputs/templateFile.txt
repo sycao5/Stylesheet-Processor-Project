@@ -1,0 +1,17 @@
+digraph Workflow {
+rankdir=TB
+{% LoadStyleSheet: stylesheet.yaml %}
+subgraph cluster_input_ports_group_outer { label=""; color=black
+{% ApplyNodeStyle: node.program %}
+{% Nodes: $G.AtomicProgramNodes  label=bla %}
+{% ApplyNodeStyle: node.program.subworkflow %}
+{% Nodes: $G.SubworkflowNodes %}
+}
+subgraph cluster_input_ports_group_outer { label=""; color=white
+{% ApplyNodeStyle: node.port %}
+{% Nodes: $G.WorkflowInPortNodes %}
+}
+{% ApplyEdgeStyle: edge.in %}
+{% Edges: $G.DataEdges %}
+{% Edges: $G.DataEdges penwidth=pval label=filecount %}
+}

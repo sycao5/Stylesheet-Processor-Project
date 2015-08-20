@@ -1,0 +1,4 @@
+node: {shape: box, style: filled, color: '#FFFFFF', peripheries: 1,  font: Courier}
+node.program: {color: '#CCFFCC'}
+node.program.subworkflow: {color: '#CCFFCC', peripheries: 2}
+edge.in: {font:Courier}

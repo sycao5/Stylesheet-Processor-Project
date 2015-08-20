@@ -1,0 +1,19 @@
+{
+    "AtomicProgramNodes": {
+        "A": [
+            "B",
+            "D"
+        ],
+        "B": null,
+        "D": [
+            "B",
+            "E"
+        ],
+        "E": "B"
+    },
+    "SubworkflowNodes": {
+        "C": "F",
+        "F": "C"
+    },
+    "WorkflowPortNodes": "G"
+}
