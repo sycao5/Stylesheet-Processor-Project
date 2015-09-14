@@ -14,7 +14,7 @@ class TemplateProcessor:
         self.startPath = startPath
         self.templateFile = inputTemplateFileName
         self.outFile = outputFileName
-        self.relaPath = outRelaPath
+        self.outputPath = outRelaPath
 
     def readFile(self, fileName):
 
@@ -32,9 +32,10 @@ class TemplateProcessor:
         self.make_sure_path_exists(template_full_path)
         lines = self.readFile(template_full_path)
 
-        output_dir = os.path.join(self.startPath, self.relaPath)
+        output_dir = os.path.join(self.outputPath)
         self.make_sure_path_exists(output_dir)
         self.output_dir = output_dir
+        print self.output_dir
         self.outFile = os.path.join(self.output_dir, self.outFile)
 
         # Iterate over the lines of the file
@@ -117,10 +118,12 @@ class TemplateProcessor:
         self.make_sure_path_exists(template_full_path)
         lines = self.readFile(template_full_path)
 
-        output_dir = os.path.join(self.startPath, path)
+        output_dir = os.path.join( path )
         self.make_sure_path_exists(output_dir)
         self.output_dir = output_dir
         t2_template_full_path = os.path.join(output_dir, T2outFileName)
+        print t2_template_full_path
+
 
         # Iterate over the lines of the file
         for line in lines:
@@ -157,6 +160,7 @@ class TemplateProcessor:
         lines = self.readFile(t2_template_full_path)
 
         t1_template_full_path = os.path.join(self.output_dir, T1outFileName)
+        print t1_template_full_path
 
         # Iterate over the lines of the file
         for line in lines:
@@ -204,6 +208,7 @@ if __name__ == '__main__':
 
     ## step T2: extend the graph to replace directives (Nodes, Edges) with the selected graph data
     processor.processTemplateT2('output', 't2_out_template.gv')
+
     ## step T1: apply styling rules to the output of T2
     processor.processTemplateT1('t2_out_template.gv', 't1_out_template.gv')
 
