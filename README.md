@@ -32,7 +32,7 @@ C. Installation:
 D. Run StyleProcessor on the example
 =====================================
 
-The example input files are in the directory `src/resources/examples/simulate_data_collection/input/`. The example template file is `combinedDotTemplate.gv`, the example graph data yaml file is `combined.yaml`, and the example stylesheet yaml file is `stylesheet.yaml`.
+The example input files are in the directory ([`src/resources/examples/simulate_data_collection/input/`](https://github.com/sycao5/Stylesheet-Processor-Project/tree/master/src/resources/examples/simulate_data_collection/input)). The example template file is ([`combinedDotTemplate.gv`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/src/resources/examples/simulate_data_collection/input/combinedDotTemplate.gv)), the example graph data yaml file is ([`combined.yaml`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/src/resources/examples/simulate_data_collection/input/combined.yaml)), and the example stylesheet yaml file is ([`stylesheet.yaml`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/src/resources/examples/simulate_data_collection/input/stylesheet.yaml)) .
 
 (1) Go to the installation folder: 
 
@@ -68,7 +68,7 @@ The example input files are in the directory `src/resources/examples/simulate_da
 E. Change the stylesheet rules
 ===============================
 
-(1) Go to the folder `src/resources/examples/simulate_data_collection/input/` and open the `stylesheet.yaml` file
+(1) Go to the folder ([`src/resources/examples/simulate_data_collection/input/`] (https://github.com/sycao5/Stylesheet-Processor-Project/tree/master/src/resources/examples/simulate_data_collection/input)) and open the ([`stylesheet.yaml`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/src/resources/examples/simulate_data_collection/input/stylesheet.yaml)) file
 
 (2) Change the color for the AtomicProgramNodes from Gray to Yellow. 
 
