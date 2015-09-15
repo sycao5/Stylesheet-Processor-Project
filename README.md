@@ -96,6 +96,6 @@ F. Demo
 
 (4) Display Green color image ([`comb_green.pdf`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/output/comb_green.pdf))
 
-(2) Display Orange color image ([`comb_orange.pdf`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/output/comb_orange.pdf))
+(5) Display Orange color image ([`comb_orange.pdf`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/output/comb_orange.pdf))
 
 
