@@ -59,13 +59,13 @@
       </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../StylesheetProcessorProject/README.md">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1140">
-              <caret line="64" column="123" selection-start-line="64" selection-start-column="123" selection-end-line="64" selection-end-column="123" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.09765625" vertical-offset="0" max-vertical-offset="1140">
+              <caret line="5" column="162" selection-start-line="5" selection-start-column="162" selection-end-line="5" selection-end-column="162" />
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="MarkdownPreviewEditor">
+          <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
         </entry>
@@ -1098,13 +1098,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../StylesheetProcessorProject/README.md">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="1140">
-          <caret line="64" column="123" selection-start-line="64" selection-start-column="123" selection-end-line="64" selection-end-column="123" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09765625" vertical-offset="0" max-vertical-offset="1140">
+          <caret line="5" column="162" selection-start-line="5" selection-start-column="162" selection-end-line="5" selection-end-column="162" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="MarkdownPreviewEditor">
+      <provider editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
     </entry>

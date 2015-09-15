@@ -3,7 +3,7 @@
 A. Introduction
 ================
 
-This stylesheet processor is used for customizing and visualizing the outputs from yesWorkflow. It requires three input files: template file (F), graph data file (G), and stylesheet yaml file (S). It can produce a valid dot file (D).
+This stylesheet processor is used for customizing and visualizing the outputs from yesWorkflow. It requires three input files: template file (F), graph data yaml file (G), and stylesheet yaml file (S). It can produce a valid dot file (D).
 
 B. Architecture
 ===============
@@ -22,11 +22,11 @@ A directives statement is denoted by a starttag (`{%`) and an endtag (`%}`)
 C. Installation:
 ================
 
-(1) Download the Stylesheet Processor Project to your local machine which runs linux-family operating system.
+(1) Download the `Stylesheet Processor Project` to your local machine which runs linux-family operating system.
 
-(2) Install docopt library from https://github.com/docopt/docopt#installation.
+(2) Install `docopt` library from https://github.com/docopt/docopt#installation.
 
-(3) Install Graphviz visualization software from http://graphviz.org/Download.php
+(3) Install `Graphviz` visualization software from http://graphviz.org/Download.php
  
  
 D. Run StyleProcessor on the example
@@ -54,9 +54,9 @@ E. Change the stylesheet rules
 
 (2) Change the color for the AtomicProgramNodes from Gray to Yellow. 
 
-* Original color: `node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "gray", peripheries: 1, fontname: Courier}`
+* Gray color: `node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "gray", peripheries: 1, fontname: Courier}`
 
-* New color: `node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "yellow", peripheries: 1, fontname: Courier}` 
+* Yellow color: `node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "yellow", peripheries: 1, fontname: Courier}` 
 
 (3) Save the changes.
 
