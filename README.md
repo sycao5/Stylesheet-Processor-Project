@@ -37,7 +37,15 @@ The example input files are in the directory `src/resources/examples/simulate_da
 (1) Go to the installation folder: `cd StylesheetProcessorProject/`
 
 (2) To display the help menu:  `./yasp.py --help`
-  
+    Stylesheet Processor
+
+    Usage:
+        yasp  graph <input-directory> <template-file-name> <output-directory> <output-file-name>
+        yasp  open <file-name>
+        yasp  dot2pdf  <output-directory> <dot-file-name> <pdf-file-name>
+        yasp [--help]
+        yasp  [--version]
+    
 (3) To generate a dot graph:   `./yasp.py graph src/resources/examples/simulate_data_collection/input/  combinedDotTemplate.gv   output   comb2.gv` 
 
 (4) To open a file: `./yasp.py open output/comb2.gv` 
