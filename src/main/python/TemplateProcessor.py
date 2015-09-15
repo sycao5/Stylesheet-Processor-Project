@@ -121,14 +121,12 @@ class TemplateProcessor:
         output_dir = os.path.join( path )
         self.make_sure_path_exists(output_dir)
         self.output_dir = output_dir
-        t2_template_full_path = os.path.join(output_dir, T2outFileName)
-        print t2_template_full_path
-
+        stepT2_output_path = os.path.join(output_dir, T2outFileName)
 
         # Iterate over the lines of the file
         for line in lines:
             if not line.startswith('{%'):
-                self.writeOutputFile(t2_template_full_path, line)
+                self.writeOutputFile(stepT2_output_path, line)
             else:
                 # process the line containing directives
                 content = self.findBetween(line, Constants.constants.STARTTAG, Constants.constants.ENDTAG)
@@ -143,29 +141,28 @@ class TemplateProcessor:
                         graphDataProcessor = GraphDataProcessor(full_path)
                         graphDataDict = graphDataProcessor.readYaml()
                     else:
-                        self.writeOutputFile(t2_template_full_path, line)  # keep the LoadStyleSheet directive
+                        self.writeOutputFile(stepT2_output_path, line)  # keep the LoadStyleSheet directive
 
                 if directCommand in Constants.constants.DATADIRECTIVES:
                     if graphDataDict[directContent]:
-                        self.writeOutputFile(t2_template_full_path, str(graphDataDict[directContent]))
+                        self.writeOutputFile(stepT2_output_path, str(graphDataDict[directContent]))
 
                 if directCommand in Constants.constants.STYLEDIRECTIVES:
-                    self.writeOutputFile(t2_template_full_path, line) # not process style directives at step T2
+                    self.writeOutputFile(stepT2_output_path, line) # not process style directives at step T2
 
 
     def processTemplateT1(self, T2outFileName, T1outFileName):
 
-        t2_template_full_path = os.path.join(self.output_dir, T2outFileName)
-        self.make_sure_path_exists(t2_template_full_path)
-        lines = self.readFile(t2_template_full_path)
+        stepT2_output_path = os.path.join(self.output_dir, T2outFileName)
+        self.make_sure_path_exists(stepT2_output_path)
+        lines = self.readFile(stepT2_output_path)
 
-        t1_template_full_path = os.path.join(self.output_dir, T1outFileName)
-        print t1_template_full_path
+        output_file_path = os.path.join(self.output_dir, T1outFileName)
 
         # Iterate over the lines of the file
         for line in lines:
             if not line.startswith('{%'):
-                self.writeOutputFile(t1_template_full_path, line)
+                self.writeOutputFile(output_file_path, line)
             else:
                 # process the line containing directives
                 content = self.findBetween(line, Constants.constants.STARTTAG, Constants.constants.ENDTAG)
@@ -197,20 +194,18 @@ class TemplateProcessor:
                         strList.append(']')
                         s = ''.join(strList)
                         #print s
-                        self.writeOutputFile(t1_template_full_path, s)
+                        self.writeOutputFile(output_file_path, s)
 
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
 
-    processor = TemplateProcessor('../../resources/examples/simulate_data_collection/test/', 'combinedDotTemplate.gv', 'output', 'comb.gv')
-
+#    processor = TemplateProcessor('../../resources/examples/simulate_data_collection/input/', 'combinedDotTemplate.gv', 'output', 'comb.gv')
     ### process in two steps (T2 and T1)
 
     ## step T2: extend the graph to replace directives (Nodes, Edges) with the selected graph data
-    processor.processTemplateT2('output', 't2_out_template.gv')
-
+#    processor.processTemplateT2('output', 't2_out_template.gv')
     ## step T1: apply styling rules to the output of T2
-    processor.processTemplateT1('t2_out_template.gv', 't1_out_template.gv')
+#    processor.processTemplateT1('t2_out_template.gv', 't1_out_template.gv')
 
     ### process in one step
     #processor.processTemplate()

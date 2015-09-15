@@ -13,10 +13,5 @@ class StylesheetYamlProcessor:
 
 
 
-#if __name__ == '__main__':
-#    styleProcessor = StylesheetYamlProcessor('../../resources/examples/simulate_data_collection/test/stylesheet.yaml')
-#    styleProcessor.readYaml()
-
-
 
 

@@ -11,9 +11,3 @@ class GraphDataProcessor:
             data = f.read()
         return yaml.load(data)
 
-
-
-#if __name__ == '__main__':
-#    graphDataProcessor = GraphDataProcessor('../../resources/examples/simulate_data_collection/test/combined.yaml')
-#    graphDataProcessor.readYaml()
-
