@@ -1,8 +1,8 @@
-"""YASP
+"""Stylesheet Processor
 
 Usage:
-  yasp <starting-path> <template-file-name> <output-directory> <output-file-name>
-  yasp [-h | --help]
+  yasp <input-directory> <template-file-name> <output-directory> <output-file-name>
+  yasp [--help]
   yasp [--version]
 
 Options:
@@ -23,8 +23,12 @@ def main():
         print 'template project'
         return
 
-    startPath = args['<starting-path>']
-    print startPath
+    if args['--help']:
+        print args
+        return
+
+    inputPath = args['<input-directory>']
+    print inputPath
 
     templateFile = args['<template-file-name>']
     print templateFile
@@ -33,7 +37,7 @@ def main():
 
     outputFileName = args['<output-file-name>']
 
-    processor = TemplateProcessor(startPath, templateFile, outputPath, outputFileName)
+    processor = TemplateProcessor(inputPath, templateFile, outputPath, outputFileName)
 
 
     # T2: import graph data to replace directives (Nodes, Edges) with the selected graph data

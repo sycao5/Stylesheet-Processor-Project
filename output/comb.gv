@@ -12,7 +12,7 @@ subgraph cluster_workflow_box_outer { label=""; color=black; penwidth=2
 subgraph cluster_workflow_box_inner { label=""; color=white
 
 
-node[shape="box"	peripheries="1"	style="filled"	fontname="Courier"	fillcolor="blue"	]
+node[shape="box"	peripheries="1"	style="filled"	fontname="Courier"	fillcolor="green"	]
 initialize_run
 load_screening_results
 calculate_strategy

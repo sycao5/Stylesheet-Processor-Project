@@ -9,12 +9,12 @@ from GraphDataProcessor import *
 
 class TemplateProcessor:
 
-    def __init__(self, startPath, inputTemplateFileName, outRelaPath, outputFileName):
+    def __init__(self, inputPath, templateFileName, outputPath, outputFileName):
 
-        self.startPath = startPath
-        self.templateFile = inputTemplateFileName
+        self.inputPath = inputPath
+        self.templateFile = templateFileName
         self.outFile = outputFileName
-        self.outputPath = outRelaPath
+        self.outputPath = outputPath
 
     def readFile(self, fileName):
 
@@ -28,7 +28,7 @@ class TemplateProcessor:
 
     def processTemplate(self):
 
-        template_full_path = os.path.join(self.startPath, self.templateFile)
+        template_full_path = os.path.join(self.inputPath, self.templateFile)
         self.make_sure_path_exists(template_full_path)
         lines = self.readFile(template_full_path)
 
@@ -51,7 +51,7 @@ class TemplateProcessor:
                 directContent = fields[1].strip()
                 if directCommand in Constants.constants.LOADDIRECTIVES:
 
-                    full_path = os.path.join(self.startPath, directContent)
+                    full_path = os.path.join(self.inputPath, directContent)
                     if directCommand == 'LoadStyleSheet':
                         styleProcessor = StylesheetYamlProcessor(full_path)
                         styleDict =  styleProcessor.readYaml()
@@ -114,7 +114,7 @@ class TemplateProcessor:
 
     def processTemplateT2(self, path, T2outFileName):
 
-        template_full_path = os.path.join(self.startPath, self.templateFile)
+        template_full_path = os.path.join(self.inputPath, self.templateFile)
         self.make_sure_path_exists(template_full_path)
         lines = self.readFile(template_full_path)
 
@@ -139,7 +139,7 @@ class TemplateProcessor:
 
                 if directCommand in Constants.constants.LOADDIRECTIVES:
                     if directCommand == 'LoadData':
-                        full_path = os.path.join(self.startPath, directContent)
+                        full_path = os.path.join(self.inputPath, directContent)
                         graphDataProcessor = GraphDataProcessor(full_path)
                         graphDataDict = graphDataProcessor.readYaml()
                     else:
@@ -176,7 +176,7 @@ class TemplateProcessor:
 
                 if directCommand in Constants.constants.LOADDIRECTIVES:
                     if directCommand == 'LoadStyleSheet':
-                        full_path = os.path.join(self.startPath, directContent)
+                        full_path = os.path.join(self.inputPath, directContent)
                         styleProcessor = StylesheetYamlProcessor(full_path)
                         styleDict =  styleProcessor.readYaml()
 
