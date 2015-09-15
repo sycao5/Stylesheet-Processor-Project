@@ -84,9 +84,13 @@ E. Change the stylesheet rules
 
 (5) The generated dot file `comb-yellow.gv` is located in the `output/` folder
 
-(6) Display Yellow color image ([`comb_yellow.pdf`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/output/comb_yellow.pdf))
 
-(7) Display Gray color image ([`comb_gray.pdf`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/output/comb_gray.pdf))
+F. Demo
+========
+
+(1) Display Yellow color image ([`comb_yellow.pdf`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/output/comb_yellow.pdf))
+
+(2) Display Gray color image ([`comb_gray.pdf`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/output/comb_gray.pdf))
 
 
 
