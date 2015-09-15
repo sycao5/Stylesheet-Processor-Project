@@ -1,11 +1,13 @@
+#!/usr/bin/env python
+
 """Stylesheet Processor
 
 Usage:
-  yasp graph <input-directory> <template-file-name> <output-directory> <output-file-name>
-  yasp open <file-name>
-  yasp dot2pdf  <output-directory> <dot-file-name> <pdf-file-name>
-  yasp [--help]
-  yasp [--version]
+    yasp  graph <input-directory> <template-file-name> <output-directory> <output-file-name>
+    yasp  open <file-name>
+    yasp  dot2pdf  <output-directory> <dot-file-name> <pdf-file-name>
+    yasp [--help]
+    yasp  [--version]
 
 Options:
   --help     show this screen.
@@ -46,18 +48,21 @@ def main():
 
         # T1: apply styling rules to the output of T2
         processor.processTemplateT1('default_t2_output.gv', outputFileName)
+        return
 
     if args['open']:
         fileName = args['<file-name>']
         call(["open", fileName])
+        return
 
     if args['dot2pdf']:
         outputPath = args['<output-directory>']
-        dotFile = args['<dot-file-name>']
+        dotFileName = args['<dot-file-name>']
+        dotFile = os.path.join(outputPath, dotFileName)
         pdfFileName = args['<pdf-file-name>']
         pdfFile = os.path.join(outputPath, pdfFileName)
         call(["dot", "-Tpdf", dotFile, "-o", pdfFile])
-
+        return
 
 if __name__ == '__main__':
     main()
