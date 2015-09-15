@@ -3,7 +3,7 @@
 A. Introduction
 ================
 
-This stylesheet processor is used for customizing and visualizing the outputs from yesWorkflow. It requires three input files: template file (F), graph data yaml file (G), and stylesheet yaml file (S). It can produce a valid dot file (D).
+This stylesheet processor is used for customizing and visualizing the outputs from yesWorkflow. It requires three input files: `template file (F)`, `graph data yaml file (G)`, and `stylesheet yaml file (S)`. It can produce a valid `dot file (D)`.
 
 B. Architecture
 ===============

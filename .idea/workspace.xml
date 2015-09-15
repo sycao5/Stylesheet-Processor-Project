@@ -59,13 +59,13 @@
       </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../StylesheetProcessorProject/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4921875" vertical-offset="492" max-vertical-offset="1410">
-              <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="59" selection-end-column="0" />
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1410">
+              <caret line="5" column="245" selection-start-line="5" selection-start-column="245" selection-end-line="5" selection-end-column="245" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
+          <provider selected="true" editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
         </entry>
@@ -1098,13 +1098,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../StylesheetProcessorProject/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4921875" vertical-offset="492" max-vertical-offset="1410">
-          <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="59" selection-end-column="0" />
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1410">
+          <caret line="5" column="245" selection-start-line="5" selection-start-column="245" selection-end-line="5" selection-end-column="245" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
+      <provider selected="true" editor-type-id="MarkdownPreviewEditor">
         <state />
       </provider>
     </entry>
