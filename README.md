@@ -34,11 +34,13 @@ D. Run StyleProcessor on the example
 
 The example input files are in the directory `src/resources/examples/simulate_data_collection/input/`. The example template file is `combinedDotTemplate.gv`, the example graph data yaml file is `combined.yaml`, and the example stylesheet yaml file is `stylesheet.yaml`.
 
-(1) Go to the installation folder: `cd StylesheetProcessorProject/`
+(1) Go to the installation folder: 
+
+    cd StylesheetProcessorProject/
 
 (2) To display the help menu:  `./yasp.py --help`
+      
     Stylesheet Processor
-
     Usage:
         yasp  graph <input-directory> <template-file-name> <output-directory> <output-file-name>
         yasp  open <file-name>
@@ -46,13 +48,21 @@ The example input files are in the directory `src/resources/examples/simulate_da
         yasp [--help]
         yasp  [--version]
     
-(3) To generate a dot graph:   `./yasp.py graph src/resources/examples/simulate_data_collection/input/  combinedDotTemplate.gv   output   comb2.gv` 
+(3) To generate a dot graph:
+    
+    ./yasp.py graph src/resources/examples/simulate_data_collection/input/  combinedDotTemplate.gv   output   comb2.gv 
 
-(4) To open a file: `./yasp.py open output/comb2.gv` 
+(4) To open a file: 
 
-(5) To transform a dot file to a pdf file: `./yasp.py dot2pdf output comb2.gv comb_gray.pdf` 
+    ./yasp.py open output/comb2.gv 
 
-(6) To open the generated pdf file:  `./yasp.py open output/comb_gray.pdf` 
+(5) To transform a dot file to a pdf file: 
+
+    ./yasp.py dot2pdf output comb2.gv comb_gray.pdf 
+
+(6) To open the generated pdf file:  
+
+    ./yasp.py open output/comb_gray.pdf 
 
 
 E. Change the stylesheet rules
@@ -62,15 +72,15 @@ E. Change the stylesheet rules
 
 (2) Change the color for the AtomicProgramNodes from Gray to Yellow. 
 
-* Gray color: `node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "gray", peripheries: 1, fontname: Courier}`
+    Gray color: `node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "gray", peripheries: 1, fontname: Courier}`
 
-* Yellow color: `node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "yellow", peripheries: 1, fontname: Courier}` 
+    Yellow color: `node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "yellow", peripheries: 1, fontname: Courier}` 
 
 (3) Save the changes.
 
 (4) Go to the root folder of the project, run
 
- `./yasp.py graph src/resources/examples/simulate_data_collection/input/  combinedDotTemplate.gv   output   comb-yellow.gv` 
+    ./yasp.py graph src/resources/examples/simulate_data_collection/input/  combinedDotTemplate.gv   output   comb-yellow.gv 
 
 (5) The generated dot file `comb-yellow.gv` is located in the `output/` folder
 
