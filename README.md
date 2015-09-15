@@ -25,6 +25,8 @@ C. Installation:
 (1) Download the TemplateProject to your local machine which runs linux-family operating system.
 
 (2) Install docopt library from https://github.com/docopt/docopt#installation.
+
+(3) Install Graphviz visualization software from http://graphviz.org/Download.php
  
  
 D. Run StyleProcessor on the example
