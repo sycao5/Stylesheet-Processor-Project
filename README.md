@@ -8,7 +8,7 @@ This stylesheet processor is used for customizing and visualizing the outputs fr
 B. Architecture
 ===============
 
-The template file contains 3 different directives (placeholders):
+The current template syntax supports 3 different directives (placeholders):
 
 (1) LOADDIRECTIVES (`LoadStyleSheet`, `LoadData`)
 
@@ -83,6 +83,9 @@ E. Change the stylesheet rules
     ./yasp.py graph src/resources/examples/simulate_data_collection/input/  combinedDotTemplate.gv   output   comb-yellow.gv 
 
 (5) The generated dot file `comb-yellow.gv` is located in the `output/` folder
+
+(6) Open ([`comb_yellow.pdf`]())
+
 
 
 
