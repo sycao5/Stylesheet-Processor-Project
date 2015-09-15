@@ -72,9 +72,9 @@ E. Change the stylesheet rules
 
 (2) Change the color for the AtomicProgramNodes from Gray to Yellow. 
 
-    Gray color: `node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "gray", peripheries: 1, fontname: Courier}`
+    Gray color: node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "gray", peripheries: 1, fontname: Courier}
 
-    Yellow color: `node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "yellow", peripheries: 1, fontname: Courier}` 
+    Yellow color: node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "yellow", peripheries: 1, fontname: Courier} 
 
 (3) Save the changes.
 
@@ -92,6 +92,10 @@ F. Demo
 
 (2) Display Gray color image ([`comb_gray.pdf`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/output/comb_gray.pdf))
 
+(3) Display Blue color image ([`comb_blue.pdf`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/output/comb_blue.pdf))
 
+(4) Display Green color image ([`comb_green.pdf`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/output/comb_green.pdf))
+
+(2) Display Orange color image ([`comb_orange.pdf`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/output/comb_orange.pdf))
 
 
