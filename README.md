@@ -14,15 +14,15 @@ The template file contains 3 different directives (placeholders):
 
 (2) STYLEDIRECTIVES ("ApplyNodeStyle", "ApplyEdgeStyle")
 
-(3) DATADIRECTIVES ("Nodes", "Edges").
+(3) DATADIRECTIVES ("Nodes", "Edges")
 
-A directives statement is denoted by a starttag ("{%") and an endtag ("%}").
+A directives statement is denoted by a starttag ("{%") and an endtag ("%}")
 
 
 C. Installation:
 ================
 
-(1) Download the TemplateProject to your local machine which runs linux-family operating system.
+(1) Download the Stylesheet Processor Project to your local machine which runs linux-family operating system.
 
 (2) Install docopt library from https://github.com/docopt/docopt#installation.
 
@@ -55,9 +55,9 @@ E. Change the stylesheet rules
 
 (2) Change the color for the AtomicProgramNodes from Gray to Yellow. 
 
-Original color: node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "gray", peripheries: 1, fontname: Courier}
+* Original color: node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "gray", peripheries: 1, fontname: Courier}
 
-New color: node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "yellow", peripheries: 1, fontname: Courier} 
+* New color: node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "yellow", peripheries: 1, fontname: Courier} 
 
 (3) Save the changes.
 
@@ -65,7 +65,7 @@ New color: node.AtomicProgramNodes: {shape: box, style: filled, fillcolor: "yell
 
 ./yasp.py graph src/resources/examples/simulate_data_collection/input/  combinedDotTemplate.gv   output   comb-yellow.gv 
 
-(5) The generated dot file is located in the output/ folder
+(5) The generated dot file (comb-yellow.gv) is located in the output/ folder
 
 
 
