@@ -21,7 +21,7 @@ import os
 
 def main():
     args = docopt(__doc__)
-    print args
+    #print args
 
     if args['--version']:
         print 'template project'
