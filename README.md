@@ -1,4 +1,4 @@
-# TemplateProject
+# Stylesheet Processor Project
 
 A. Introduction
 ================
