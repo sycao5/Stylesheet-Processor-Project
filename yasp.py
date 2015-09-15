@@ -1,22 +1,24 @@
 """Stylesheet Processor
 
 Usage:
-  yasp <input-directory> <template-file-name> <output-directory> <output-file-name>
+  yasp graph <input-directory> <template-file-name> <output-directory> <output-file-name>
+  yasp open <file-name>
+  yasp dot2pdf  <output-directory> <dot-file-name> <pdf-file-name>
   yasp [--help]
   yasp [--version]
 
 Options:
-  -h --help     show this screen.
+  --help     show this screen.
   --version     show version.
-
 """
 
 from docopt import docopt
 from src.main.python.TemplateProcessor import TemplateProcessor as TemplateProcessor
+from subprocess import call
+import os
 
 def main():
     args = docopt(__doc__)
-
     print args
 
     if args['--version']:
@@ -27,24 +29,34 @@ def main():
         print args
         return
 
-    inputPath = args['<input-directory>']
-    print inputPath
+    if args['graph']:
+        inputPath = args['<input-directory>']
 
-    templateFile = args['<template-file-name>']
-    print templateFile
+        templateFile = args['<template-file-name>']
 
-    outputPath = args['<output-directory>']
+        outputPath = args['<output-directory>']
 
-    outputFileName = args['<output-file-name>']
+        outputFileName = args['<output-file-name>']
 
-    processor = TemplateProcessor(inputPath, templateFile, outputPath, outputFileName)
+        # initialize a template processor
+        processor = TemplateProcessor(inputPath, templateFile, outputPath, outputFileName)
 
+        # T2: import graph data to replace directives (Nodes, Edges) with the selected graph data
+        processor.processTemplateT2(outputPath, 'default_t2_output.gv')
 
-    # T2: import graph data to replace directives (Nodes, Edges) with the selected graph data
-    processor.processTemplateT2(outputPath, 'default_t2_output.gv')
+        # T1: apply styling rules to the output of T2
+        processor.processTemplateT1('default_t2_output.gv', outputFileName)
 
-    # T1: apply styling rules to the output of T2
-    processor.processTemplateT1('default_t2_output.gv', outputFileName)
+    if args['open']:
+        fileName = args['<file-name>']
+        call(["open", fileName])
+
+    if args['dot2pdf']:
+        outputPath = args['<output-directory>']
+        dotFile = args['<dot-file-name>']
+        pdfFileName = args['<pdf-file-name>']
+        pdfFile = os.path.join(outputPath, pdfFileName)
+        call(["dot", "-Tpdf", dotFile, "-o", pdfFile])
 
 
 if __name__ == '__main__':

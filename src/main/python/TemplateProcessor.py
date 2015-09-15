@@ -1,5 +1,5 @@
 
-import os
+import os,shutil
 import Constants
 import re
 import errno
@@ -27,6 +27,7 @@ class TemplateProcessor:
 
 
     def processTemplate(self):
+        ### process in one step
 
         template_full_path = os.path.join(self.inputPath, self.templateFile)
         self.make_sure_path_exists(template_full_path)
@@ -113,6 +114,7 @@ class TemplateProcessor:
 
 
     def processTemplateT2(self, path, T2outFileName):
+        ## step T2: extend the graph to replace directives (Nodes, Edges) with the selected graph data
 
         template_full_path = os.path.join(self.inputPath, self.templateFile)
         self.make_sure_path_exists(template_full_path)
@@ -151,18 +153,20 @@ class TemplateProcessor:
                     self.writeOutputFile(stepT2_output_path, line) # not process style directives at step T2
 
 
-    def processTemplateT1(self, T2outFileName, T1outFileName):
+    def processTemplateT1(self, T2outFileName, resultFileName):
+        ## step T1: apply styling rules to the output of T2
 
         stepT2_output_path = os.path.join(self.output_dir, T2outFileName)
         self.make_sure_path_exists(stepT2_output_path)
         lines = self.readFile(stepT2_output_path)
 
-        output_file_path = os.path.join(self.output_dir, T1outFileName)
+        output_file = os.path.join(self.output_dir, resultFileName)
+        stepT1_output_file = os.path.join(self.output_dir, 'default_output.gv')
 
         # Iterate over the lines of the file
         for line in lines:
             if not line.startswith('{%'):
-                self.writeOutputFile(output_file_path, line)
+                self.writeOutputFile(stepT1_output_file, line)
             else:
                 # process the line containing directives
                 content = self.findBetween(line, Constants.constants.STARTTAG, Constants.constants.ENDTAG)
@@ -194,18 +198,14 @@ class TemplateProcessor:
                         strList.append(']')
                         s = ''.join(strList)
                         #print s
-                        self.writeOutputFile(output_file_path, s)
+                        self.writeOutputFile(stepT1_output_file, s)
+
+        # copy the default output file to the final result file, otherwise the default output file name is "default_output.gv"
+        if resultFileName:
+            shutil.copy(stepT1_output_file, output_file)
+            os.remove(stepT1_output_file)
+
+        # delete the output file from step T2
+        os.remove(stepT2_output_path)
 
 
-#if __name__ == '__main__':
-
-#    processor = TemplateProcessor('../../resources/examples/simulate_data_collection/input/', 'combinedDotTemplate.gv', 'output', 'comb.gv')
-    ### process in two steps (T2 and T1)
-
-    ## step T2: extend the graph to replace directives (Nodes, Edges) with the selected graph data
-#    processor.processTemplateT2('output', 't2_out_template.gv')
-    ## step T1: apply styling rules to the output of T2
-#    processor.processTemplateT1('t2_out_template.gv', 't1_out_template.gv')
-
-    ### process in one step
-    #processor.processTemplate()
