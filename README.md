@@ -98,4 +98,4 @@ F. Demo
 
 (5) Display Orange color image ([`comb_orange.pdf`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/output/comb_orange.pdf))
 
-
+(6) Display Shape image ([`comb_invhouse.pdf`](https://github.com/sycao5/Stylesheet-Processor-Project/blob/master/output/comb_invhouse.pdf))
